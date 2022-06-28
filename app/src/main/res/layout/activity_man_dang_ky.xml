@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ManDangKy">
+    <TextView
+        android:textColor="#4CAF50"
+        android:layout_marginTop="100dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="Đăng ký"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+    <EditText
+        android:id="@+id/dkTaiKhoan"
+        android:drawableRight="@drawable/ic_taikhoan"
+        android:hint="Tài Khoản"
+        android:layout_marginTop="90dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/dkMatKhau"
+        android:drawableRight="@drawable/ic_matkhau"
+        android:hint="Mật Khẩu"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/dkEmail"
+        android:drawableRight="@drawable/ic_email"
+        android:hint="Email"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"></EditText>
+    <Button
+        android:id="@+id/dkDangKy"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="Đăng ký"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+    <Button
+        android:id="@+id/dkDangNhap"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="Trở về Đăng Nhập"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+</LinearLayout>

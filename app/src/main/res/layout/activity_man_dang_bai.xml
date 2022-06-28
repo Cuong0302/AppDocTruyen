@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ManDangBai">
+<TextView
+    android:textColor="#2196F3"
+    android:textStyle="bold"
+    android:textSize="30sp"
+    android:layout_marginTop="70dp"
+    android:gravity="center"
+    android:text="Đăng bài"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></TextView>
+    <EditText
+        android:inputType="text"
+        android:id="@+id/dbtieude"
+        android:hint="Tên truyện"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:inputType="text"
+        android:id="@+id/dbnoidung"
+        android:hint="Nội dung"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:inputType="textUri"
+        android:hint="Ảnh"
+        android:id="@+id/dbimg"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"></EditText>
+    <Button
+        android:id="@+id/dbdangbai"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Đăng bài"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+</LinearLayout>

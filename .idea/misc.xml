@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/drawable/ic_taikhoan.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_main.xml" value="0.1234375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_admin.xml" value="0.1921875" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_chinh_anh_sang.xml" value="0.536" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_dang_bai.xml" value="0.1921875" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_dang_ky.xml" value="0.1234375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_dang_nhap.xml" value="0.1234375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_noi_dung_truyen.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_settings.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_thong_tin_app.xml" value="0.1234375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/activity_man_tim_kiem.xml" value="0.1234375" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/chuyen_muc.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/dialogdelete.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/layout_dialog.xml" value="0.4" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/nav_thong_tin.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/layout/new_truyen.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AppDocTruyen/app/src/main/res/menu/mymenu.xml" value="0.176" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

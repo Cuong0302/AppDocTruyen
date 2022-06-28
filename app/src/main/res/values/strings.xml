@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppDocTruyen</string>
+    <dimen name="text_size">32dp</dimen>
+</resources>

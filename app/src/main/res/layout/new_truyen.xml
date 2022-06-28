@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="#2196F3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+       android:src="@drawable/ic_launcher_background"
+    android:id="@+id/imgNewTruyen"
+     android:layout_gravity="center"
+    android:layout_width="100dp"
+    android:layout_height="100dp">
+    </ImageView>
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:id="@+id/textviewTenTruyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="Tên Truyện"
+        android:textSize="25sp"></TextView>
+</LinearLayout>
