@@ -119,10 +119,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,ManNoiDungTruyen.class);
                 String tent =   TruyenArrayList.get(position).getTenTruyen();
                 String noidungt = TruyenArrayList.get(position).getNoiDung();
+                int SoLuotXem = TruyenArrayList.get(position).getSoluotxem();
+
+                databaseDocTruyen.soLuotXem(SoLuotXem,TruyenArrayList.get(position).getID());
+
                 intent.putExtra("tentruyen",tent);
                 intent.putExtra("noidung",noidungt);
+                intent.putExtra("soluotxem",(SoLuotXem + 1));
                 //Log.e("Tên truyện : ",tent);
                 startActivity(intent);
+
 
                 //Thay đổi màu khi click vào
                 view.setBackgroundColor(Color.parseColor("#FFBB86FC"));
@@ -149,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);   //GravityCompat.START làm nó nhảy ra giữa
             }
         });
+
     }
 
 
@@ -224,8 +231,10 @@ public class MainActivity extends AppCompatActivity {
             String tentruyen = cursor1.getString(1);
             String noidung = cursor1.getString(2);
             String anh = cursor1.getString(3);
-            int id_tk = cursor1.getInt(4);
-            TruyenArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
+            int soluotxem = cursor1.getInt(4);
+            int id_tk = cursor1.getInt(5);
+
+            TruyenArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk,soluotxem));
 
             adaptertruyen = new adaptertruyen(getApplicationContext(),TruyenArrayList);
             listViewNew.setAdapter(adaptertruyen);

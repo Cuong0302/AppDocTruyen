@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ManNoiDungTruyen extends AppCompatActivity {
 
-    TextView txtTenTruyen,txtNoidung;
+    TextView txtTenTruyen,txtNoidung, textView2;
     FloatingActionButton openDialog;
     View manNoiDung;
 
@@ -114,9 +114,11 @@ public class ManNoiDungTruyen extends AppCompatActivity {
         Intent intent = getIntent();
         String tenTruyen = intent.getStringExtra("tentruyen");
         String noidung = intent.getStringExtra("noidung");
+        int SoLuotXem = intent.getIntExtra("soluotxem",0);
 
         txtTenTruyen.setText(tenTruyen);
         txtNoidung.setText(noidung);
+        textView2.setText("Số lượt xem: " + SoLuotXem);
 
         //Cuộn textview
         txtNoidung.setMovementMethod(new ScrollingMovementMethod());
@@ -124,6 +126,7 @@ public class ManNoiDungTruyen extends AppCompatActivity {
     }
 
     private void anhXa() {
+        textView2 = findViewById(R.id.textView2);
         txtNoidung = findViewById(R.id.NoiDung);
         txtTenTruyen = findViewById(R.id.TenTruyen);
         openDialog =findViewById(R.id.openDialog);
