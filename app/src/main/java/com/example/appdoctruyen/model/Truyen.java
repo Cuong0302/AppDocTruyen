@@ -6,6 +6,24 @@ public class Truyen {
     private String NoiDung;
     private String Anh;
     private int ID_TK;
+    private int soluotxem;
+
+    public int getSoluotxem() {
+        return soluotxem;
+    }
+
+    public void setSoluotxem(int soluotxem) {
+        this.soluotxem = soluotxem;
+    }
+
+    public Truyen(int ID, String tenTruyen, String noiDung, String anh, int ID_TK, int soluotxem) {
+        this.ID = ID;
+        TenTruyen = tenTruyen;
+        NoiDung = noiDung;
+        Anh = anh;
+        this.ID_TK = ID_TK;
+        this.soluotxem = soluotxem;
+    }
 
     public Truyen(int ID, String tenTruyen, String noiDung, String anh, int ID_TK) {
         this.ID = ID;
