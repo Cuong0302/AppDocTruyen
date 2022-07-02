@@ -17,6 +17,13 @@
             android:id="@+id/timkiem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
+
+         <Button
+             android:id="@+id/btnSort"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Button" />
+
          <ListView
              android:id="@+id/listviewtimkiem"
              android:layout_width="match_parent"

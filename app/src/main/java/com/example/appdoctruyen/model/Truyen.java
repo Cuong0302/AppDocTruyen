@@ -8,6 +8,8 @@ public class Truyen {
     private int ID_TK;
     private int soluotxem;
 
+
+
     public int getSoluotxem() {
         return soluotxem;
     }

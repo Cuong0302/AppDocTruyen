@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -47,6 +48,8 @@ public class ManTimKiem extends AppCompatActivity {
     adaptertruyen adaptertruyen;
     DatabaseDocTruyen databaseDocTruyen;
 
+    Button btnSort;
+
 //    ArrayAdapter<Truyen> adapter;
 
     @Override
@@ -57,6 +60,7 @@ public class ManTimKiem extends AppCompatActivity {
         listView = findViewById(R.id.listviewtimkiem);
         //toolbar = findViewById(R.id.toolbartimkiem);
         edt = findViewById(R.id.timkiem);
+        btnSort = findViewById(R.id.btnSort);
 
         //ActionBar();
         initList();
@@ -84,8 +88,11 @@ public class ManTimKiem extends AppCompatActivity {
                 Intent intent = new Intent(ManTimKiem.this,ManNoiDungTruyen.class);
                 String tent =   arrayList.get(position).getTenTruyen();
                 String noidungt = arrayList.get(position).getNoiDung();
+                int soluotxem = arrayList.get(position).getSoluotxem();
+
                 intent.putExtra("tentruyen",tent);
                 intent.putExtra("noidung",noidungt);
+                intent.putExtra("soluotxem",soluotxem);
                 //Log.e("Tên truyện : ",tent);
                 startActivity(intent);
             }
@@ -126,12 +133,13 @@ public class ManTimKiem extends AppCompatActivity {
             String tentruyen = cursor1.getString(1);
             String noidung = cursor1.getString(2);
             String anh = cursor1.getString(3);
-            int id_tk = cursor1.getInt(4);
+            int SoLuotXem = cursor1.getInt(4);
+            int id_tk = cursor1.getInt(5);
 
-            TruyenArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
+            TruyenArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk,SoLuotXem));
 
             //Thêm dữ liệu vào mảng
-            arrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk));
+            arrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk,SoLuotXem));
 
             adaptertruyen = new adaptertruyen(getApplicationContext(),TruyenArrayList);
             //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,TruyenArrayList);
