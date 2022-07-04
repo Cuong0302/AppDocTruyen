@@ -120,12 +120,12 @@ public class MainActivity extends AppCompatActivity {
                 String tent =   TruyenArrayList.get(position).getTenTruyen();
                 String noidungt = TruyenArrayList.get(position).getNoiDung();
                 int SoLuotXem = TruyenArrayList.get(position).getSoluotxem();
-
+                SoLuotXem += 1;
                 databaseDocTruyen.soLuotXem(SoLuotXem,TruyenArrayList.get(position).getID());
 
                 intent.putExtra("tentruyen",tent);
                 intent.putExtra("noidung",noidungt);
-                intent.putExtra("soluotxem",(SoLuotXem + 1));
+                intent.putExtra("soluotxem",SoLuotXem );
                 //Log.e("Tên truyện : ",tent);
                 startActivity(intent);
 

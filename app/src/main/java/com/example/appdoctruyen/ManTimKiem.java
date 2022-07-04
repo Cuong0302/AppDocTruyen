@@ -32,6 +32,8 @@ import com.example.appdoctruyen.model.Truyen;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ManTimKiem extends AppCompatActivity {
@@ -41,9 +43,11 @@ public class ManTimKiem extends AppCompatActivity {
     //SearchView searchView;
     EditText edt;
 
-    ArrayList<Truyen> TruyenArrayList;
+    ArrayList<Truyen> TruyenArrayList, SortByViewArrayList;
     //
     ArrayList<Truyen> arrayList;
+
+
 
     adaptertruyen adaptertruyen;
     DatabaseDocTruyen databaseDocTruyen;
@@ -81,6 +85,35 @@ public class ManTimKiem extends AppCompatActivity {
 
         });
 
+        btnSort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SortByViewArrayList = new ArrayList<>();
+                Cursor cursor1 = databaseDocTruyen.getSortByView();
+                while (cursor1.moveToNext()){
+
+                    int id = cursor1.getInt(0);
+                    String tentruyen = cursor1.getString(1);
+                    String noidung = cursor1.getString(2);
+                    String anh = cursor1.getString(3);
+                    int SoLuotXem = cursor1.getInt(4);
+                    int id_tk = cursor1.getInt(5);
+
+                    //Thêm dữ liệu vào mảng
+                    SortByViewArrayList.add(new Truyen(id,tentruyen,noidung,anh,id_tk,SoLuotXem));
+
+                    adaptertruyen = new adaptertruyen(getApplicationContext(),SortByViewArrayList);
+                    //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,TruyenArrayList);
+                    listView.setAdapter(adaptertruyen);
+                }
+                cursor1.moveToFirst();
+                cursor1.close();
+            }
+        });
+
+
+
+
         //su kien click listiew
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -99,6 +132,8 @@ public class ManTimKiem extends AppCompatActivity {
         });
 
     }
+
+
 
     //search
     private void filter(String text){

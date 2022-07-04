@@ -275,10 +275,16 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor res =  db.rawQuery( "select * from "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN , null );
+        Cursor res =  db.rawQuery( "select * from "+TABLE_TRUYEN+" ORDER BY "+ID_TRUYEN+" limit 3" , null );
         return res;
     }
 
+    public Cursor getSortByView(){
+        SQLiteDatabase db  = getReadableDatabase();
+
+        Cursor res = db.rawQuery("select * from "+TABLE_TRUYEN+" ORDER BY "+SO_LUOT_XEM+" ASC",null);
+        return res;
+    }
 
     //Lấy tất cả truyện
     public Cursor getData2(){
