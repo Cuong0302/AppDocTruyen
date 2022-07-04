@@ -15,7 +15,7 @@ public class ManThongTinApp extends AppCompatActivity {
 
         txtThongTin = findViewById(R.id.textviewthongtin);
 
-        String thongtin = "";
+        String thongtin = "App được tạo bởi Cương đẹp trai và những người bạn. ";
         txtThongTin.setText(thongtin);
     }
 }

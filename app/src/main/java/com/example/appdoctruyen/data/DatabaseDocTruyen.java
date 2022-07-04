@@ -220,7 +220,8 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TRUYEN);
+        onCreate(db);
     }
     public void AddTaiKhoan(TaiKhoan taiKhoan){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -248,7 +249,7 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
     public void soLuotXem(int Soluotxem, int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Log.d("TAG", "soLuotXem: " + Soluotxem);
+//        Log.d("TAG", "soLuotXem: " + Soluotxem);
         db.execSQL("UPDATE "+TABLE_TRUYEN+" SET "+SO_LUOT_XEM+" = "+Soluotxem+" WHERE "+ID_TRUYEN+"= "+id+"");
         db.close();
     }
@@ -283,6 +284,7 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
         SQLiteDatabase db  = getReadableDatabase();
 
         Cursor res = db.rawQuery("select * from "+TABLE_TRUYEN+" ORDER BY "+SO_LUOT_XEM+" ASC",null);
+//        OR DESC
         return res;
     }
 
@@ -303,3 +305,39 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
 
     }
 }
+
+
+
+
+//
+//    SELECT FROM table_name
+//        WHERE column LIKE 'XXXX%'
+//
+//        or
+//
+//        SELECT FROM table_name
+//        WHERE column LIKE '%XXXX%'
+//
+//        or
+//
+//        SELECT FROM table_name
+//        WHERE column LIKE 'XXXX_'
+//
+//        or
+//
+//        SELECT FROM table_name
+//        WHERE column LIKE '_XXXX'
+//
+//        or
+//
+//        SELECT FROM table_name
+//        WHERE column LIKE '_XXXX_'
+
+
+//    WHERE SALARY LIKE '200%'	Tìm kiếm bất kỳ giá trị nào bắt đầu với 200
+//        WHERE SALARY LIKE '%200%'	Tìm kiếm bất kỳ giá trị nào mà có 200 ở bất kỳ vị trí nào
+//        WHERE SALARY LIKE '_00%'	Tìm kiếm bất kỳ giá trị nào có 00 trong vị trí thứ hai và ba
+//        WHERE SALARY LIKE '2_%_%'	Tìm kiếm bất kỳ giá trị nào mà bắt đầu với 2 và có độ dài tối thiểu là 3 ký tự
+//        WHERE SALARY LIKE '%2'	Tìm kiếm bất kỳ giá trị nào mà kết thúc với 2
+//        WHERE SALARY LIKE '_2%3'	Tìm kiếm bất kỳ giá trị nào mà có 2 trong vị trí thứ hai và kết thúc với 3
+//        WHERE SALARY LIKE '2___3'	Tìm kiếm bất kỳ giá trị nào có 5 chữ số bắt đầu với 2 và kết thúc với

@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
+                if(position == 11){
 
                         if(i == 2) {
                             Intent intent = new Intent(MainActivity.this, ManAdmin.class);
@@ -101,11 +101,22 @@ public class MainActivity extends AppCompatActivity {
                             Log.e("Đăng bài : ","Bạn không có quyền ");
                         }
                     }
-                else if(position == 1){
+                else if(position == 0){
                     Intent intent = new Intent(MainActivity.this,ManThongTinApp.class);
                     startActivity(intent);
                 }
+                else if(position == 1){
+                    finish();
+                }
+
                 else if(position == 2){
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+
+                    // Tao su kien ket thuc app
+                    Intent startMain = new Intent(Intent.ACTION_MAIN);
+                    startMain.addCategory(Intent.CATEGORY_HOME);
+                    startActivity(startMain);
                     finish();
                 }
             }
@@ -121,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
                 String noidungt = TruyenArrayList.get(position).getNoiDung();
                 int SoLuotXem = TruyenArrayList.get(position).getSoluotxem();
                 SoLuotXem += 1;
+
+                Log.d("fjdhfjsf", "onItemClick: fjshfjhsdf");
+
                 databaseDocTruyen.soLuotXem(SoLuotXem,TruyenArrayList.get(position).getID());
 
                 intent.putExtra("tentruyen",tent);
@@ -215,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
 //        chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_post));
         chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.drawable.ic_face));
         chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.ic_login));
+        chuyenmucArrayList.add(new chuyenmuc("Thoát", R.drawable.ic_login));
 
         adapterchuyenmuc = new adapterchuyenmuc(this,R.layout.chuyen_muc,chuyenmucArrayList);
         listView.setAdapter(adapterchuyenmuc);
