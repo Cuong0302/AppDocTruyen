@@ -140,12 +140,13 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("tentruyen",tent);
                 intent.putExtra("noidung",noidungt);
                 intent.putExtra("soluotxem",SoLuotXem );
+                intent.putExtra("vitri",position );
                 //Log.e("Tên truyện : ",tent);
                 startActivity(intent);
 
 
                 //Thay đổi màu khi click vào
-                view.setBackgroundColor(Color.parseColor("#FFBB86FC"));
+//                view.setBackgroundColor(Color.parseColor("#FFBB86FC"));
             }
         });
 
@@ -229,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 //        chuyenmucArrayList.add(new chuyenmuc("Đăng bài", R.drawable.ic_post));
         chuyenmucArrayList.add(new chuyenmuc("Thông tin", R.drawable.ic_face));
         chuyenmucArrayList.add(new chuyenmuc("Đăng xuất", R.drawable.ic_login));
-        chuyenmucArrayList.add(new chuyenmuc("Thoát", R.drawable.ic_login));
+//        chuyenmucArrayList.add(new chuyenmuc("Thoát", R.drawable.ic_login));
 
         adapterchuyenmuc = new adapterchuyenmuc(this,R.layout.chuyen_muc,chuyenmucArrayList);
         listView.setAdapter(adapterchuyenmuc);
@@ -238,10 +239,8 @@ public class MainActivity extends AppCompatActivity {
 
         //New Truyện
         TruyenArrayList = new ArrayList<>();
-
         Cursor cursor1 = databaseDocTruyen.getData1();
         while (cursor1.moveToNext()){
-
             int id = cursor1.getInt(0);
             String tentruyen = cursor1.getString(1);
             String noidung = cursor1.getString(2);

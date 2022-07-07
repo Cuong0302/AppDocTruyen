@@ -294,6 +294,11 @@ public class DatabaseDocTruyen extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN,null);
         return res;
     }
+    public Cursor getData4(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_TRUYEN,null);
+        return res;
+    }
 
 
     //Xóa truyện với id = i

@@ -19,14 +19,14 @@
         <activity android:name=".ManThongTinApp" />
         <activity android:name=".ManDangKy" />
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".ManDangNhap">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ManDangNhap">
+
         </activity>
     </application>
 

@@ -3,6 +3,7 @@ package com.example.appdoctruyen;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -13,6 +14,7 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.appdoctruyen.data.DatabaseDocTruyen;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ManNoiDungTruyen extends AppCompatActivity {
@@ -20,6 +22,8 @@ public class ManNoiDungTruyen extends AppCompatActivity {
     TextView txtTenTruyen,txtNoidung, textView2;
     FloatingActionButton openDialog;
     View manNoiDung;
+    DatabaseDocTruyen databaseDocTruyen;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +32,33 @@ public class ManNoiDungTruyen extends AppCompatActivity {
 
         anhXa();
         hienThiND();
+        databaseDocTruyen = new DatabaseDocTruyen(this);
         openDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                settings();
+//                settings();
             }
         });
+
+//        Cursor cursor = databaseDocTruyen.getData4();
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cursor.moveToNext();
+//                String tentruyen = cursor.getString(1);
+//                String noidung = cursor.getString(2);
+//                int soluotxem = cursor.getInt(4);
+//
+//                txtNoidung.setText(noidung);
+//                txtTenTruyen.setText(tentruyen);
+//                textView2.setText("Số lượt xem: "+soluotxem);
+//
+//                if(cursor.isLast()){
+//                    cursor.moveToFirst();
+//                }
+//            }
+//        });
     }
 
     private void settings() {
@@ -63,7 +88,6 @@ public class ManNoiDungTruyen extends AppCompatActivity {
                 }
             }
         });
-
         //Thay đổi cỡ chữ
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -115,6 +139,7 @@ public class ManNoiDungTruyen extends AppCompatActivity {
         String tenTruyen = intent.getStringExtra("tentruyen");
         String noidung = intent.getStringExtra("noidung");
         int SoLuotXem = intent.getIntExtra("soluotxem",0);
+
 
         txtTenTruyen.setText(tenTruyen);
         txtNoidung.setText(noidung);
